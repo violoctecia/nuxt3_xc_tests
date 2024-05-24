@@ -9,6 +9,7 @@ import CheckSign from "@/components/globalHoroscopesComponent/CheckSign.vue";
 import ZodiacListwTitle from "@/components/globalComponents/ZodiacListwTitle.vue";
 import EastSection from "@/components/mainComponents/EastSection.vue";
 import OtherOtherwTitle from "@/components/globalComponents/OtherOtherwTitle.vue";
+import checkSignImage from "assets/images/Maya_horoscope_2.svg";
 
 const route = useRoute();
 const rawDate = ref(route.params.date);
@@ -59,6 +60,7 @@ const mayaSign = ref(findMayaSignByDate(rawDate.value));
 watchEffect(() => {
   mayaSign.value = findMayaSignByDate(rawDate.value);
 });
+
 </script>
 
 <template>
@@ -79,6 +81,7 @@ watchEffect(() => {
   ></DateInfo>
   <DateDescSign :sign="mayaSign" :signsData="mayaSigns"></DateDescSign>
   <CheckSign
+      :image="checkSignImage"
       :signsData="mayaSigns"
       :title="'Другие знаки в гороскопе Майя'"
       :horoscopeType="'maya'"

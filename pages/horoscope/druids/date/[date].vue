@@ -130,6 +130,7 @@ const dateSign = ref(findSignByDate(rawDate.value));
 watchEffect(() => {
     dateSign.value = findSignByDate(rawDate.value);
 });
+import checkSignImage from "~/assets/images/Druid_horoscope_2.svg";
 </script>
 
 <template>
@@ -150,6 +151,7 @@ watchEffect(() => {
     ></DateInfo>
     <DateDescSign :sign="dateSign" :signsData="signs"></DateDescSign>
     <CheckSign
+        :image="checkSignImage"
         :signsData="druidSigns.filter((sign) => sign.ru !== dateSign)"
         :title="'Другие знаки в гороскопе друидов'"
         :horoscopeType="'druids'"></CheckSign>

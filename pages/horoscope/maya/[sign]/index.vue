@@ -24,6 +24,7 @@ watch(
         foundSign.value = findSignByEnglishName(newSign);
     }
 );
+import checkSignImage from "~/assets/images/Maya_horoscope_2.svg";
 </script>
 
 <template>
@@ -43,6 +44,7 @@ watch(
         :is-small-margin="true"
     ></CheckDate>
     <CheckSign
+        :image="checkSignImage"
         :signsData="signs"
         :title="'Описание знаков в гороскопе Майя'"
         :horoscopeType="'maya'"

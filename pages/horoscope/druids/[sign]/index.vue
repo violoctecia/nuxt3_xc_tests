@@ -24,6 +24,7 @@ watch(
         foundSign.value = findSignByEnglishName(newSign);
     }
 );
+import checkSignImage from "~/assets/images/Druid_horoscope_2.svg";
 </script>
 
 <template>
@@ -41,10 +42,12 @@ watch(
         :horoscopeType="'druids'"
         :title="'гороскоп Друидов'"
         :is-small-margin="true"
+
     ></CheckDate>
     <CheckSign
         :signsData="signs"
         :title="'Описание знаков в гороскопе Друидов'"
         :horoscopeType="'druids'"
+        :image="checkSignImage"
     ></CheckSign>
 </template>

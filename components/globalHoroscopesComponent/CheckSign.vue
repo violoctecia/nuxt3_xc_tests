@@ -104,8 +104,8 @@ const handleButtonClick = (sign) => {
         position: absolute;
         z-index: -1;
         bottom: 0;
-        max-width: 100%;
-        left: 50%;
+        right: 0;
+
     }
 }
 
