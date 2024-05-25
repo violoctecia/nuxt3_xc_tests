@@ -1,17 +1,26 @@
 <script setup>
-import { useRuntimeConfig } from "#app";
+import { ref, onMounted } from 'vue';
 
-const config = useRuntimeConfig();
 const apiUrl = "https://horoscope-be.nomadicdemo.com/api/lunar-horoscope";
+const lunarHoroscopeData = ref(null);
+const pending = ref(true);
+const error = ref(null);
 
-const { data: lunarHoroscopeData, pending, error } = await useFetch(apiUrl);
-
-if (error.value) {
-    console.error(
-        "Ошибка при получении данных лунного гороскопа:",
-        error.value
-    );
+async function fetchData() {
+    try {
+        const response = await $fetch(apiUrl);
+        lunarHoroscopeData.value = response;
+    } catch (err) {
+        console.error("Ошибка при получении данных лунного гороскопа:", err);
+        error.value = err;
+    } finally {
+        pending.value = false;
+    }
 }
+
+onMounted(() => {
+    fetchData();
+});
 </script>
 
 <template>
@@ -20,23 +29,25 @@ if (error.value) {
             <div class="main_text">
                 <div class="text_wrapper">
                     <h1>
-                        Здесь вы найдете <span>гороскоп</span> для всех знаков
-                        зодиака
+                        Здесь вы найдете <span>гороскоп</span> для всех знаков зодиака
                     </h1>
                     <h2>
-                        Гороскоп на каждый день: узнай, что приготовили для тебя
-                        звёзды
+                        Гороскоп на каждый день: узнай, что приготовили для тебя звёзды
                     </h2>
                 </div>
-                <img src="@/assets/images/main_illustration.svg" alt="" />
+                <img src="@/assets/images/main_illustration.svg" alt="Main illustration" />
             </div>
             <div class="main_card">
                 <h1>Лунный гороскоп на сегодня</h1>
-                <div class="date">
-                    <p>{{ lunarHoroscopeData.lunar_day }}</p>
-                    <p>{{ lunarHoroscopeData.date }}</p>
-                </div>
-                <p>{{ lunarHoroscopeData.text }}</p>
+                <div v-if="pending">Загрузка...</div>
+                <div v-else-if="error">Ошибка при загрузке данных.</div>
+
+                    <div class="date" v-if="lunarHoroscopeData">
+                        <p>{{ lunarHoroscopeData?.lunar_day }}</p>
+                        <p>{{ lunarHoroscopeData?.date }}</p>
+                    </div>
+                    <p v-if="lunarHoroscopeData">{{ lunarHoroscopeData?.text }}</p>
+
             </div>
         </div>
     </section>
