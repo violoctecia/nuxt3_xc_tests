@@ -30,6 +30,14 @@ export default {
                 <nuxt-link to="/natal-chart">Натальные карты</nuxt-link>
             </template>
         </PageLinks>
+
+        <div class="container">
+            <div class="natal-main-title">
+                <h1>Натальные карты</h1>
+                <h2>Натальная карта используется для анализа личности, характера и судьбы человека и позволяет
+                    разобраться в разных сферах жизни</h2>
+            </div>
+        </div>
         <main-block-links></main-block-links>
         <div class="mb96">
             <telegram-link></telegram-link>
@@ -38,9 +46,59 @@ export default {
 </template>
 
 <style scoped>
+.natal-main-title {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 724px;
+    margin: auto;
+    margin-bottom: 48px;
+
+    h1 {
+        font-weight: 900;
+        font-size: 56px;
+        line-height: 107%;
+        text-align: center;
+        color: var(--dark-select-10);
+    }
+
+    h2 {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 165%;
+        text-align: center;
+        color: var(--dark-select-10);
+    }
+}
+
+@media (max-width: 1100px) {
+    .natal-main-title {
+        gap: 8px;
+        margin-bottom: 40px;
+        max-width: 500px;
+
+        h1 {
+            font-weight: 900;
+            font-size: 32px;
+            line-height: 119%;
+            text-align: center;
+            color: var(--dark-select-10);
+        }
+
+        h2 {
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 153%;
+            text-align: center;
+            color: var(--dark-select-10);
+        }
+    }
+}
+
 .page {
     transition: opacity 0.3s;
 }
+
 .fade-enter-active,
 .fade-leave-active {
     opacity: 0;
