@@ -40,14 +40,13 @@ onMounted(() => {
             <div class="main_card">
                 <h1>Лунный гороскоп на сегодня</h1>
                 <div v-if="pending">Загрузка...</div>
-                <div v-else-if="error">Ошибка при загрузке данных.</div>
+                <div v-if="error">Ошибка при загрузке данных.</div>
 
                     <div class="date" v-if="lunarHoroscopeData">
                         <p>{{ lunarHoroscopeData?.lunar_day }}</p>
                         <p>{{ lunarHoroscopeData?.date }}</p>
                     </div>
                     <p v-if="lunarHoroscopeData">{{ lunarHoroscopeData?.text }}</p>
-
             </div>
         </div>
     </section>

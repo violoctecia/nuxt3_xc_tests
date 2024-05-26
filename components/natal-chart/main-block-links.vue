@@ -1,6 +1,12 @@
 <script setup>
 import YellowButton from "~/components/UI/yellowButton.vue";
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
+const handleYellowButtonClick = () => {
+    const path = `/natal-chart/xc2kfknwi9823`;
+    router.push(path);
+};
 </script>
 
 <template>
@@ -119,7 +125,7 @@ import YellowButton from "~/components/UI/yellowButton.vue";
                         <h4>Персональный разбор личности в астрологии — уникальная возможность лучше познакомиться с
                             собственной индивидуальностью, раскрыть потенциал для личностного роста и саморазвития</h4>
                     </div>
-                    <yellow-button :natal="true">Получить разбор</yellow-button>
+                    <yellow-button :natal="true" @click="handleYellowButtonClick">Получить разбор</yellow-button>
                     <img src="@/assets/images/natal-personal-img.svg" alt="img">
                 </div>
 
@@ -486,6 +492,15 @@ import YellowButton from "~/components/UI/yellowButton.vue";
             font-size: 15px;
             line-height: 160%;
             color: var(--dark-select-20);
+            max-width: 610px;
+        }
+    }
+}
+@media (max-width: 800px) {
+    .info {
+        h3 {
+
+
         }
     }
 }

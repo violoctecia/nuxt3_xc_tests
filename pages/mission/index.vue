@@ -105,7 +105,9 @@ import HowDoHoroscope from "~/components/zodiacComponents/HowDoHoroscope.vue";
                 </h3>
             </div>
         </div>
+    </div>
         <HowDoHoroscope></HowDoHoroscope>
+    <div class="container">
         <section class="creators">
             <div class="row">
                 <p>Над проектом работали</p>
