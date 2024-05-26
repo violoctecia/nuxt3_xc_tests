@@ -141,6 +141,9 @@ const goToHoroscope = (period) => {
             font-size: 17px;
             line-height: 165%;
             color: var(--dark-select-10);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         button:hover {

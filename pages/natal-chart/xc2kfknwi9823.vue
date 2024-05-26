@@ -5,6 +5,7 @@ import NatalFaq from "~/components/natal-chart/natal-paid-page/natal-faq.vue";
 import NatalCardHelps from "~/components/natal-chart/natal-paid-page/natal-card-helps.vue";
 import NatalThanks from "~/components/natal-chart/natal-paid-page/natal-thanks.vue";
 import NatalCardInfluence from "~/components/natal-chart/natal-paid-page/natal-card-influence.vue";
+import NatalAdvantages from "~/components/natal-chart/natal-paid-page/natal-advantages.vue";
 </script>
 
 <script>
@@ -41,6 +42,7 @@ export default {
         <natal-card-helps></natal-card-helps>
         <natal-thanks></natal-thanks>
         <natal-card-influence></natal-card-influence>
+        <natal-advantages></natal-advantages>
         <natal-faq></natal-faq>
     </div>
 </template>

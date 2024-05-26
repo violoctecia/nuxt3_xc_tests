@@ -144,7 +144,9 @@
         flex-direction: row;
         flex-wrap: wrap;
         gap: 24px;
-
+        .block:nth-child(2) {
+            display: none;
+        }
         .block {
             display: flex;
             flex-direction: column;
