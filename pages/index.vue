@@ -5,23 +5,6 @@ import TelegramLink from "@/components/mainComponents/TelegramLink.vue";
 import EastSection from "@/components/mainComponents/EastSection.vue";
 import OtherSection from "@/components/mainComponents/OtherSection.vue";
 </script>
-
-<script>
-export default {
-    mounted() {
-        this.$refs.page.classList.add("fade-enter-active");
-        setTimeout(() => {
-            this.$refs.page.classList.remove("fade-enter-active");
-        }, 300);
-    },
-    beforeRouteLeave(to, from, next) {
-        this.$refs.page.classList.add("fade-leave-active");
-        setTimeout(() => {
-            next();
-        }, 300);
-    },
-};
-</script>
 <style scoped>
 .page {
     transition: opacity 0.3s;
@@ -31,6 +14,23 @@ export default {
     opacity: 0;
 }
 </style>
+<script>
+export default {
+    mounted() {
+        this.$refs.page.classList.add("fade-enter-active");
+        setTimeout(() => {
+            this.$refs.page.classList.remove("fade-enter-active");
+        }, 150);
+    },
+    beforeRouteLeave(to, from, next) {
+        this.$refs.page.classList.add("fade-leave-active");
+        setTimeout(() => {
+            next();
+        }, 150);
+    },
+};
+</script>
+
 
 <template>
     <div ref="page" class="page">

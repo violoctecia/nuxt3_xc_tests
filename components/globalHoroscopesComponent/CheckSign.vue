@@ -31,7 +31,7 @@ const handleButtonClick = (sign) => {
         <div class="container">
             <div class="wrapper">
                 <div class="text">
-                    <h1>{{ props.title }}</h1>
+                    <h2>{{ props.title }}</h2>
                     <p>Выберите знак и узнайте сакральный смысл</p>
                 </div>
                 <div class="buttons">
@@ -114,7 +114,7 @@ const handleButtonClick = (sign) => {
     flex-direction: column;
     gap: 16px;
 
-    h1 {
+    h2 {
         font-weight: 900;
         font-size: 40px;
         line-height: 110%;
@@ -157,7 +157,7 @@ const handleButtonClick = (sign) => {
     }
 
     .text {
-        h1 {
+        h2 {
             font-size: 24px;
             line-height: 117%;
         }

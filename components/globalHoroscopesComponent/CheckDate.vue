@@ -73,7 +73,7 @@ const handleYellowButtonClick = () => {
         <div class="container">
             <div class="wrapper">
                 <div class="text">
-                    <h1>Узнайте свой {{ props.title }}</h1>
+                    <h2>Узнайте свой {{ props.title }}</h2>
                     <p>Введите дату рождения, чтобы узнать свой знак</p>
                 </div>
                 <div class="buttons">
@@ -113,7 +113,7 @@ const handleYellowButtonClick = () => {
     flex-direction: column;
     gap: 16px;
 
-    h1 {
+    h2 {
         font-weight: 900;
         font-size: 40px;
         line-height: 110%;
@@ -163,7 +163,7 @@ const handleYellowButtonClick = () => {
     }
 
     .text {
-        h1 {
+        h2 {
             font-size: 24px;
             line-height: 117%;
         }

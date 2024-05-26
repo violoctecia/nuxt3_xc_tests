@@ -21,14 +21,6 @@ export default {
   },
 };
 </script>
-<style scoped>
-.page {
-  transition: opacity 0.3s;
-}
-.fade-enter-active, .fade-leave-active {
-  opacity: 0;
-}
-</style>
 
 <template>
   <div ref="page" class="page">

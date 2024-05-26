@@ -1,7 +1,10 @@
 <script setup>
 import PageLinks from "~/components/globalComponents/PageLinks.vue";
-import NatalTitle from "~/components/natal-chart/natal-title.vue";
-import NatalFaq from "~/components/natal-chart/natal-faq.vue";
+import NatalTitle from "~/components/natal-chart/natal-paid-page/natal-title.vue";
+import NatalFaq from "~/components/natal-chart/natal-paid-page/natal-faq.vue";
+import NatalCardHelps from "~/components/natal-chart/natal-paid-page/natal-card-helps.vue";
+import NatalThanks from "~/components/natal-chart/natal-paid-page/natal-thanks.vue";
+import NatalCardInfluence from "~/components/natal-chart/natal-paid-page/natal-card-influence.vue";
 </script>
 
 <script>
@@ -10,13 +13,13 @@ export default {
         this.$refs.page.classList.add("fade-enter-active");
         setTimeout(() => {
             this.$refs.page.classList.remove("fade-enter-active");
-        }, 300);
+        }, 150);
     },
     beforeRouteLeave(to, from, next) {
         this.$refs.page.classList.add("fade-leave-active");
         setTimeout(() => {
             next();
-        }, 300);
+        }, 150);
     },
 };
 </script>
@@ -35,17 +38,13 @@ export default {
             :title="'Получите персональный звездный путеводитель по Вашей жизни'"
             :desc="'Закажите натальные карты на нашем сервисе, и звезды укажут путь'">
         </natal-title>
+        <natal-card-helps></natal-card-helps>
+        <natal-thanks></natal-thanks>
+        <natal-card-influence></natal-card-influence>
         <natal-faq></natal-faq>
     </div>
 </template>
 
 <style scoped>
-.page {
-    transition: opacity 0.3s;
-}
 
-.fade-enter-active,
-.fade-leave-active {
-    opacity: 0;
-}
 </style>

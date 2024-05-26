@@ -9,12 +9,12 @@ const props = defineProps({
 <template>
     <section class="other">
         <div class="container">
-            <h1 class="title">Восточные гороскопы</h1>
+            <h2 class="title">Восточные гороскопы</h2>
 
             <div class="cards_wrapper">
                 <div class="card chinese" v-if="!props.chinese">
                     <div class="text">
-                        <h1>Китайский гороскоп</h1>
+                        <h3>Китайский гороскоп</h3>
                         <p>
                             Система астрологии, основанная на круговом
                             календаре, с 12 знаками-животными, каждый из которых
@@ -46,7 +46,7 @@ const props = defineProps({
                 </div>
                 <div class="card japanese" v-if="!props.japanese">
                     <div class="text">
-                        <h1>Японский гороскоп</h1>
+                        <h3>Японский гороскоп</h3>
                         <p>
                             Система астрологии, основанная на древних японских
                             верованиях, которая отражает характер через 12
@@ -78,7 +78,7 @@ const props = defineProps({
                 </div>
                 <div class="card zaroastrian" v-if="!props.zaroastrian">
                     <div class="text">
-                        <h1>Зороастрийский гороскоп</h1>
+                        <h3>Зороастрийский гороскоп</h3>
                         <p>
                             Древняя система астрологии, основанная на учениях
                             пророка Заратуштры, учитывающая влияние планет на
@@ -135,7 +135,7 @@ const props = defineProps({
     display: flex;
     flex-direction: column;
     gap: 12px;
-    h1 {
+    h3 {
         font-weight: 800;
         font-size: 32px;
         line-height: 112%;
@@ -211,7 +211,7 @@ a {
         gap: 12px;
         margin-bottom: 24px;
         min-height: 170px;
-        h1 {
+        h3 {
             font-weight: 900;
             font-size: 20px;
             line-height: 120%;

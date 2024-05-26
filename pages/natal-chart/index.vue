@@ -10,13 +10,13 @@ export default {
         this.$refs.page.classList.add("fade-enter-active");
         setTimeout(() => {
             this.$refs.page.classList.remove("fade-enter-active");
-        }, 300);
+        }, 150);
     },
     beforeRouteLeave(to, from, next) {
         this.$refs.page.classList.add("fade-leave-active");
         setTimeout(() => {
             next();
-        }, 300);
+        }, 150);
     },
 };
 </script>
@@ -95,12 +95,5 @@ export default {
     }
 }
 
-.page {
-    transition: opacity 0.3s;
-}
 
-.fade-enter-active,
-.fade-leave-active {
-    opacity: 0;
-}
 </style>

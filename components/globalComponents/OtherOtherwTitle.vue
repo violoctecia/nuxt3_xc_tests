@@ -9,12 +9,12 @@ const props = defineProps({
 <template>
     <section class="other">
         <div class="container">
-            <h1 class="title">Восточные гороскопы</h1>
+            <h2 class="title">Восточные гороскопы</h2>
 
             <div class="cards_wrapper">
                 <div class="card floral" v-if="!props.floral">
                     <div class="text">
-                        <h1>Цветочный гороскоп</h1>
+                        <h3>Цветочный гороскоп</h3>
                         <p>
                             Система астрологии, опирающаяся на ассоциации между
                             цветами и личностными характеристиками.
@@ -45,7 +45,7 @@ const props = defineProps({
                 </div>
                 <div class="card druids" v-if="!props.druids">
                     <div class="text">
-                        <h1>Гороскоп друидов</h1>
+                        <h3>Гороскоп друидов</h3>
                         <p>
                             Древняя кельтская система астрологии, основанная на
                             наблюдениях за природой и циклическом ходе времени.
@@ -76,7 +76,7 @@ const props = defineProps({
                 </div>
                 <div class="card maya" v-if="!props.maya">
                     <div class="text">
-                        <h1>Гороскоп Майя</h1>
+                        <h3>Гороскоп Майя</h3>
                         <p>
                             Система астрологии, созданная цивилизацией Майя,
                             основанная на их календаре и наблюдениях за
@@ -133,7 +133,7 @@ const props = defineProps({
     display: flex;
     flex-direction: column;
     gap: 12px;
-    h1 {
+    h3 {
         font-weight: 800;
         font-size: 32px;
         line-height: 112%;
@@ -209,7 +209,7 @@ a {
         gap: 12px;
         margin-bottom: 24px;
         min-height: 170px;
-        h1 {
+        h3 {
             font-weight: 900;
             font-size: 20px;
             line-height: 120%;

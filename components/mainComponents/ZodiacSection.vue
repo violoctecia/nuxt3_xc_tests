@@ -6,7 +6,7 @@ import ZodiacsList from "@/components/globalComponents/ZodiacsList.vue";
   <section class="zodiac">
     <div class="container">
       <div class="text">
-        <h1 class="title">Зодиакальный гороскоп</h1>
+        <h2 class="title">Зодиакальный гороскоп</h2>
         <p>Узнай, что говорят звёзды о твоей жизни</p>
       </div>
       <ZodiacsList :scroll="true"></ZodiacsList>

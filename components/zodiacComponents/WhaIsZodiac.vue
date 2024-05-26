@@ -2,7 +2,7 @@
   <section>
     <div class="container">
       <div class="wrapper">
-        <h1>Что такое зодиакальный гороскоп?</h1>
+        <h2>Что такое зодиакальный гороскоп?</h2>
         <p>
           Зодиакальный гороскоп - это система астрологии, которая базируется на
           положении Солнца в момент рождения человека. Он состоит из 12 знаков
@@ -32,7 +32,7 @@
   display: flex;
   flex-direction: column;
 }
-h1 {
+h2 {
   font-weight: 900;
   font-size: 56px;
   line-height: 107%;
@@ -55,7 +55,7 @@ img {
     padding: 24px;
     border-radius: 16px;
   }
-  h1 {
+  h2 {
     font-size: 24px;
 
     margin-bottom: 16px;
