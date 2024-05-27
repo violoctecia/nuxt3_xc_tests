@@ -2,9 +2,8 @@
     <section class="east">
         <div class="container">
             <h2 class="title">Восточные гороскопы</h2>
-
             <div class="cards_wrapper">
-                <div class="card">
+                <nuxt-link to="/horoscope/chinese" class="card">
                     <div class="text">
                         <h3>Китайский гороскоп</h3>
                         <p>
@@ -13,8 +12,8 @@
                             соответствует году рождения.
                         </p>
                     </div>
-                    <nuxt-link to="/horoscope/chinese"
-                        >Читать
+                    <span
+                    >Читать
                         <svg
                             width="24"
                             height="24"
@@ -30,13 +29,13 @@
                             </g>
                             <defs>
                                 <clipPath id="clip0_2005_293">
-                                    <rect width="24" height="24" fill="white" />
+                                    <rect width="24" height="24" fill="white"/>
                                 </clipPath>
                             </defs>
                         </svg>
-                    </nuxt-link>
-                </div>
-                <div class="card">
+                    </span>
+                </nuxt-link>
+                <nuxt-link to="/horoscope/japanese" class="card">
                     <div class="text">
                         <h3>Японский гороскоп</h3>
                         <p>
@@ -45,8 +44,7 @@
                             знаков животных, соответствующих году рождения.
                         </p>
                     </div>
-                    <nuxt-link to="/horoscope/japanese"
-                        >Читать
+                    <span>Читать
                         <svg
                             width="24"
                             height="24"
@@ -62,13 +60,14 @@
                             </g>
                             <defs>
                                 <clipPath id="clip0_2005_293">
-                                    <rect width="24" height="24" fill="white" />
+                                    <rect width="24" height="24" fill="white"/>
                                 </clipPath>
                             </defs>
                         </svg>
-                    </nuxt-link>
-                </div>
-                <div class="card">
+                    </span>
+                </nuxt-link>
+                <nuxt-link to="/horoscope/zoroastrian"
+                           class="card">
                     <div class="text">
                         <h3>Зороастрийский гороскоп</h3>
                         <p>
@@ -77,8 +76,7 @@
                             духовную эволюцию человека и принципы морали.
                         </p>
                     </div>
-                    <nuxt-link to="/horoscope/zoroastrian"
-                        >Читать
+                    <span>Читать
                         <svg
                             width="24"
                             height="24"
@@ -94,12 +92,12 @@
                             </g>
                             <defs>
                                 <clipPath id="clip0_2005_293">
-                                    <rect width="24" height="24" fill="white" />
+                                    <rect width="24" height="24" fill="white"/>
                                 </clipPath>
                             </defs>
                         </svg>
-                    </nuxt-link>
-                </div>
+                    </span>
+                </nuxt-link>
             </div>
         </div>
     </section>
@@ -109,6 +107,7 @@
 .title {
     margin-bottom: 64px;
 }
+
 .cards_wrapper {
     display: grid;
     grid-template-areas:
@@ -116,6 +115,7 @@
         "second third";
     gap: 16px;
 }
+
 .card {
     background-color: #1b1d1f;
     border-radius: 24px;
@@ -127,12 +127,14 @@
     max-width: 520px;
     background-size: cover;
 }
+
 .text {
     display: flex;
     flex-direction: column;
     gap: 12px;
     position: relative;
     z-index: 5;
+
     h3 {
         font-weight: 800;
         font-size: 32px;
@@ -140,6 +142,7 @@
         color: var(--dark-select-10);
         max-width: 60%;
     }
+
     p {
         font-weight: 400;
         font-size: 17px;
@@ -147,7 +150,12 @@
         color: var(--dark-select-20);
     }
 }
-a {
+
+a:hover span {
+    color: var(--yellow) !important;
+}
+
+span {
     display: flex;
     align-items: center;
     gap: 4px;
@@ -165,12 +173,14 @@ a {
     background-repeat: no-repeat;
     background-position: bottom -9px right;
 }
+
 .card:nth-child(2) {
     grid-area: second;
     background-image: url("@/assets/images/Oriental_horoscope_2.svg");
     background-repeat: no-repeat;
     background-position: bottom right;
 }
+
 .card:last-child {
     grid-area: third;
     position: relative;
@@ -185,9 +195,11 @@ a {
         margin-bottom: 20px;
         padding-left: 24px;
     }
+
     .container {
         padding: 0;
     }
+
     .cards_wrapper {
         overflow-x: scroll;
         width: 100%;
@@ -198,6 +210,7 @@ a {
         gap: 16px;
         padding-bottom: 20px;
     }
+
     .card {
         border-radius: 16px;
         display: flex;
@@ -207,41 +220,48 @@ a {
         min-height: 426px;
         min-width: 310px;
     }
+
     .text {
         display: flex;
         flex-direction: column;
         gap: 12px;
         margin-bottom: 24px;
         min-height: 170px;
+
         h3 {
             font-weight: 900;
             font-size: 20px;
             line-height: 120%;
             max-width: 100%;
         }
+
         p {
             font-weight: 400;
             font-size: 15px;
             line-height: 160%;
         }
     }
-    a {
+
+    span {
         font-weight: 500;
         font-size: 17px;
         line-height: 165%;
     }
+
     .card:first-child {
         grid-area: first;
         background-image: url("@/assets/images/Oriental_horoscope1_chinese_mob.svg");
         background-repeat: no-repeat;
         background-position: bottom -9px right;
     }
+
     .card:nth-child(2) {
         grid-area: second;
         background-image: url("@/assets/images/Oriental_horoscope2_Japanese_mob.svg");
         background-repeat: no-repeat;
         background-position: bottom -9px right;
     }
+
     .card:last-child {
         grid-area: third;
         position: relative;
@@ -250,6 +270,7 @@ a {
         background-repeat: no-repeat;
         background-position: bottom left;
     }
+
     .card:last-child {
         min-height: 426px;
         height: 426px;
@@ -257,3 +278,5 @@ a {
     }
 }
 </style>
+<script setup lang="ts">
+</script>

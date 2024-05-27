@@ -1,7 +1,3 @@
-<script setup>
-
-</script>
-
 <template>
   <div class="container">
     <h1>Карта сайта</h1>

@@ -1,26 +1,7 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-
-const apiUrl = "https://horoscope-be.nomadicdemo.com/api/lunar-horoscope";
-const lunarHoroscopeData = ref(null);
-const pending = ref(true);
-const error = ref(null);
-
-async function fetchData() {
-    try {
-        const response = await $fetch(apiUrl);
-        lunarHoroscopeData.value = response;
-    } catch (err) {
-        console.error("Ошибка при получении данных лунного гороскопа:", err);
-        error.value = err;
-    } finally {
-        pending.value = false;
-    }
-}
-
-onMounted(() => {
-    fetchData();
-});
+import {useFetch} from "#app";
+const apiUrl = 'https://horoscope-be.nomadicdemo.com/api/lunar-horoscope'
+const { data } = await useFetch(apiUrl)
 </script>
 
 <template>
@@ -39,14 +20,11 @@ onMounted(() => {
             </div>
             <div class="main_card">
                 <h1>Лунный гороскоп на сегодня</h1>
-                <div v-if="pending">Загрузка...</div>
-                <div v-if="error">Ошибка при загрузке данных.</div>
-
-                    <div class="date" v-if="lunarHoroscopeData">
-                        <p>{{ lunarHoroscopeData?.lunar_day }}</p>
-                        <p>{{ lunarHoroscopeData?.date }}</p>
+                    <div class="date">
+                        <p>{{ data.lunar_day }}</p>
+                        <p>{{ data.date }}</p>
                     </div>
-                    <p v-if="lunarHoroscopeData">{{ lunarHoroscopeData?.text }}</p>
+                    <p>{{ data.text }}</p>
             </div>
         </div>
     </section>

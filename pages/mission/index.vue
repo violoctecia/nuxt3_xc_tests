@@ -1,5 +1,12 @@
 <script setup>
 import HowDoHoroscope from "~/components/zodiacComponents/HowDoHoroscope.vue";
+import { useFetch, useHead } from '#app'
+
+// const apiUrl = 'https://horoscope-be.nomadicdemo.com/api/meta/main'
+//https://jsonplaceholder.typicode.com/todos/1
+// const { data } = await useFetch(apiUrl)
+// console.log(data.value.seo_array)
+
 </script>
 
 <template>

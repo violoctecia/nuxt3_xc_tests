@@ -12,7 +12,8 @@ const props = defineProps({
             <h2 class="title">Восточные гороскопы</h2>
 
             <div class="cards_wrapper">
-                <div class="card floral" v-if="!props.floral">
+                <nuxt-link to="/horoscope/floral"
+                           class="card floral" v-if="!props.floral">
                     <div class="text">
                         <h3>Цветочный гороскоп</h3>
                         <p>
@@ -20,8 +21,7 @@ const props = defineProps({
                             цветами и личностными характеристиками.
                         </p>
                     </div>
-                    <nuxt-link to="/horoscope/floral"
-                        >Читать
+                    <span>Читать
                         <svg
                             width="24"
                             height="24"
@@ -41,9 +41,10 @@ const props = defineProps({
                                 </clipPath>
                             </defs>
                         </svg>
-                    </nuxt-link>
-                </div>
-                <div class="card druids" v-if="!props.druids">
+                    </span>
+                </nuxt-link>
+                <nuxt-link to="/horoscope/druids"
+                           class="card druids" v-if="!props.druids">
                     <div class="text">
                         <h3>Гороскоп друидов</h3>
                         <p>
@@ -51,8 +52,7 @@ const props = defineProps({
                             наблюдениях за природой и циклическом ходе времени.
                         </p>
                     </div>
-                    <nuxt-link to="/horoscope/druids"
-                        >Читать
+                    <span>Читать
                         <svg
                             width="24"
                             height="24"
@@ -72,9 +72,10 @@ const props = defineProps({
                                 </clipPath>
                             </defs>
                         </svg>
-                    </nuxt-link>
-                </div>
-                <div class="card maya" v-if="!props.maya">
+                    </span>
+                </nuxt-link>
+                <nuxt-link to="/horoscope/maya"
+                           class="card maya" v-if="!props.maya">
                     <div class="text">
                         <h3>Гороскоп Майя</h3>
                         <p>
@@ -83,8 +84,7 @@ const props = defineProps({
                             планетами.
                         </p>
                     </div>
-                    <nuxt-link to="/horoscope/maya"
-                        >Читать
+                    <span>Читать
                         <svg
                             width="24"
                             height="24"
@@ -104,8 +104,8 @@ const props = defineProps({
                                 </clipPath>
                             </defs>
                         </svg>
-                    </nuxt-link>
-                </div>
+                    </span>
+                </nuxt-link>
             </div>
         </div>
     </section>
@@ -147,7 +147,11 @@ const props = defineProps({
         color: var(--dark-select-20);
     }
 }
-a {
+a:hover span {
+    color: var(--yellow) !important;
+}
+
+span {
     display: flex;
     align-items: center;
     gap: 4px;
@@ -221,7 +225,7 @@ a {
             line-height: 160%;
         }
     }
-    a {
+    span {
         font-weight: 500;
         font-size: 17px;
         line-height: 165%;

@@ -1,7 +1,6 @@
 <script setup>
 import PageLinks from "@/components/globalComponents/PageLinks.vue";
 import HoroscopeDate from "@/components/zodiacSignDateComponents/HoroscopeDate.vue";
-import BlockCelebrity from "@/components/zodiacSignComponents/BlockCelebrity.vue";
 import EastSection from "@/components/mainComponents/EastSection.vue";
 import OtherSection from "@/components/mainComponents/OtherSection.vue";
 import { useRoute, useRouter } from "vue-router";
@@ -55,19 +54,9 @@ const goToHoroscope = (period) => {
 };
 
 //get
-import { useRuntimeConfig } from "#app";
-
-const config = useRuntimeConfig();
 const apiUrl = `https://horoscope-be.nomadicdemo.com/api/horoscope/zodiac/${sign}/weekly`;
-
-const { data: horoscopeData, pending, error } = await useFetch(apiUrl);
-
-if (error.value) {
-    console.error(
-        "Ошибка при получении данных датированного гороскопа:",
-        error.value
-    );
-}
+import { useFetch } from '#app'
+const { data } = await useFetch(apiUrl)
 </script>
 
 <template>
@@ -86,7 +75,7 @@ if (error.value) {
 
     <HoroscopeDate
         :dateInfo="{ russianDate: russianDate, genitiveCase: genitiveCase }"
-        :text="horoscopeData.text"
+        :text="data.text"
     ></HoroscopeDate>
 
     <div class="choose_date">
@@ -103,7 +92,6 @@ if (error.value) {
         </div>
     </div>
 
-    <BlockCelebrity></BlockCelebrity>
     <EastSection></EastSection>
     <OtherSection></OtherSection>
 </template>

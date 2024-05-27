@@ -4,7 +4,8 @@
             <h2 class="title">Другие гороскопы</h2>
 
             <div class="cards_wrapper">
-                <div class="card">
+                <nuxt-link to="/horoscope/floral"
+                           class="card">
                     <div class="text">
                         <h3>Цветочный гороскоп</h3>
                         <p>
@@ -12,8 +13,7 @@
                             цветами и личностными характеристиками.
                         </p>
                     </div>
-                    <nuxt-link to="/horoscope/floral"
-                        >Читать
+                    <span>Читать
                         <svg
                             width="24"
                             height="24"
@@ -29,13 +29,14 @@
                             </g>
                             <defs>
                                 <clipPath id="clip0_2005_293">
-                                    <rect width="24" height="24" fill="white" />
+                                    <rect width="24" height="24" fill="white"/>
                                 </clipPath>
                             </defs>
                         </svg>
-                    </nuxt-link>
-                </div>
-                <div class="card">
+                    </span>
+                </nuxt-link>
+                <nuxt-link to="/horoscope/druids"
+                           class="card">
                     <div class="text">
                         <h3>Гороскоп друидов</h3>
                         <p>
@@ -43,8 +44,7 @@
                             наблюдениях за природой и циклическом ходе времени.
                         </p>
                     </div>
-                    <nuxt-link to="/horoscope/druids"
-                        >Читать
+                    <span>Читать
                         <svg
                             width="24"
                             height="24"
@@ -60,13 +60,14 @@
                             </g>
                             <defs>
                                 <clipPath id="clip0_2005_293">
-                                    <rect width="24" height="24" fill="white" />
+                                    <rect width="24" height="24" fill="white"/>
                                 </clipPath>
                             </defs>
                         </svg>
-                    </nuxt-link>
-                </div>
-                <div class="card">
+                    </span>
+                </nuxt-link>
+                <nuxt-link to="/horoscope/maya"
+                           class="card">
                     <div class="text">
                         <h3>Гороскоп Майя</h3>
                         <p>
@@ -75,8 +76,7 @@
                             планетами.
                         </p>
                     </div>
-                    <nuxt-link to="/horoscope/maya"
-                        >Читать
+                    <span>Читать
                         <svg
                             width="24"
                             height="24"
@@ -92,12 +92,12 @@
                             </g>
                             <defs>
                                 <clipPath id="clip0_2005_293">
-                                    <rect width="24" height="24" fill="white" />
+                                    <rect width="24" height="24" fill="white"/>
                                 </clipPath>
                             </defs>
                         </svg>
-                    </nuxt-link>
-                </div>
+                    </span>
+                </nuxt-link>
             </div>
         </div>
     </section>
@@ -107,10 +107,12 @@
 .title {
     margin-bottom: 64px;
 }
+
 .cards_wrapper {
     display: flex;
     gap: 16px;
 }
+
 .card {
     background: #1b1d1f;
     border-radius: 24px;
@@ -121,10 +123,12 @@
     height: 520px;
     max-width: 340px;
 }
+
 .text {
     display: flex;
     flex-direction: column;
     gap: 12px;
+
     h3 {
         font-weight: 800;
         font-size: 32px;
@@ -132,6 +136,7 @@
         color: var(--dark-select-10);
         max-width: 60%;
     }
+
     p {
         font-weight: 400;
         font-size: 15px;
@@ -139,7 +144,10 @@
         color: var(--dark-select-20);
     }
 }
-a {
+a:hover span {
+    color: var(--yellow) !important;
+}
+span {
     display: flex;
     align-items: center;
     gap: 4px;
@@ -150,16 +158,19 @@ a {
     position: relative;
     z-index: 15;
 }
+
 .card:first-child {
     background-image: url("@/assets/images/other_horoscopes_1_floral.svg");
     background-repeat: no-repeat;
     background-position: bottom -40px left;
 }
+
 .card:nth-child(2) {
     background-image: url("@/assets/images/other_horoscopes_2druids.svg");
     background-repeat: no-repeat;
     background-position: bottom -40px left;
 }
+
 .card:last-child {
     background-image: url("@/assets/images/other_horoscopes_3_Maya.svg");
     background-repeat: no-repeat;
@@ -171,9 +182,11 @@ a {
         margin-bottom: 20px;
         padding-left: 24px;
     }
+
     .container {
         padding: 0;
     }
+
     .cards_wrapper {
         overflow-x: scroll;
         width: 100%;
@@ -182,6 +195,7 @@ a {
         padding: 0 24px;
         padding-bottom: 20px;
     }
+
     .card {
         border-radius: 16px;
         display: flex;
@@ -192,28 +206,34 @@ a {
         min-width: 310px;
         position: relative;
     }
+
     .text {
         display: flex;
         flex-direction: column;
         gap: 12px;
         margin-bottom: 24px;
         min-height: 170px;
+
         h3 {
             font-weight: 900;
             font-size: 20px;
             line-height: 120%;
             max-width: 100%;
         }
+
         p {
             font-weight: 400;
             font-size: 15px;
             line-height: 160%;
         }
     }
-    a {
+
+    span {
         font-weight: 500;
         font-size: 17px;
         line-height: 165%;
     }
 }
 </style>
+<script setup lang="ts">
+</script>
