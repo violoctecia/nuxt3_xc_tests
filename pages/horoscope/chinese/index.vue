@@ -1,12 +1,12 @@
 <script setup>
 import PageLinks from "@/components/globalComponents/PageLinks.vue";
-import TitleSection from "@/components/globalHoroscopesComponent/TitleSection.vue";
-import CheckDate from "@/components/globalHoroscopesComponent/CheckDate.vue";
+import TitleSection from "~/components/other-horoscopes/globalHoroscopesComponent/TitleSection.vue";
+import CheckDate from "~/components/other-horoscopes/globalHoroscopesComponent/CheckDate.vue";
 import ZodiacListwTitle from "@/components/globalComponents/ZodiacListwTitle.vue";
 import OtherEastwTitle from "@/components/globalComponents/OtherEastwTitle.vue";
 import OtherSection from "@/components/mainComponents/OtherSection.vue";
-import CheckSign from "@/components/globalHoroscopesComponent/CheckSign.vue";
-import WhatIs from "@/components/globalHoroscopesComponent/WhatIs.vue";
+import CheckSign from "~/components/other-horoscopes/globalHoroscopesComponent/CheckSign.vue";
+import WhatIs from "~/components/other-horoscopes/globalHoroscopesComponent/WhatIs.vue";
 import { chineseElements, chineseSigns } from "@/assets/data/chinese.js";
 
 const signs = chineseSigns;
@@ -15,7 +15,7 @@ const elements = chineseElements;
 import titleImage from "@/assets/images/Chinese_horoscope_main_illustration.svg";
 import checkSignImage from "@/assets/images/Chinese_horoscope_2_.svg";
 import whatIsImage from "@/assets/images/Chinese_horoscope_3.svg";
-import CheckElement from "@/components/chineseComponents/ChineseCheckElement.vue";
+import CheckElement from "~/components/other-horoscopes/chineseComponents/ChineseCheckElement.vue";
 </script>
 
 <template>

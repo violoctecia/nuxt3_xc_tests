@@ -1,8 +1,8 @@
 <script setup>
 import PageLinks from "@/components/globalComponents/PageLinks.vue";
-import Block1 from "@/components/zodiacSignComponents/Block1.vue";
-import DescBLocks from "~/components/zodiacSignComponents/DescBLocks.vue";
-import Block3 from "@/components/zodiacSignComponents/Block3.vue";
+import Block1 from "~/components/zodiacs/zodiacSignComponents/Block1.vue";
+import DescBLocks from "~/components/zodiacs/zodiacSignComponents/DescBLocks.vue";
+import Block3 from "~/components/zodiacs/zodiacSignComponents/Block3.vue";
 import EastSection from "@/components/mainComponents/EastSection.vue";
 import OtherSection from "@/components/mainComponents/OtherSection.vue";
 

@@ -2,10 +2,10 @@
 import { ref, watchEffect } from "vue";
 import { useRoute } from "vue-router";
 import PageLinks from "@/components/globalComponents/PageLinks.vue";
-import DateInfo from "@/components/globalHoroscopesComponent/DateInfo.vue";
-import DateDescSign from "@/components/globalHoroscopesComponent/DateDescSign.vue";
+import DateInfo from "~/components/other-horoscopes/globalHoroscopesComponent/DateInfo.vue";
+import DateDescSign from "~/components/other-horoscopes/globalHoroscopesComponent/DateDescSign.vue";
 import { mayaSigns } from "@/assets/data/maya.js";
-import CheckSign from "@/components/globalHoroscopesComponent/CheckSign.vue";
+import CheckSign from "~/components/other-horoscopes/globalHoroscopesComponent/CheckSign.vue";
 import ZodiacListwTitle from "@/components/globalComponents/ZodiacListwTitle.vue";
 import EastSection from "@/components/mainComponents/EastSection.vue";
 import OtherOtherwTitle from "@/components/globalComponents/OtherOtherwTitle.vue";

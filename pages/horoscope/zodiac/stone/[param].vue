@@ -2,8 +2,8 @@
 import PageLinks from "~/components/globalComponents/PageLinks.vue";
 import { useRoute } from "vue-router";
 import {zodiacStones} from "assets/data/zodiac.js";
-import DescriptionBlock from "~/components/zodiacDeteiled/descriptionBlock.vue";
-import OthersBlock from "~/components/zodiacDeteiled/othersBlock.vue";
+import DescriptionBlock from "~/components/zodiacs/zodiacDeteiled/descriptionBlock.vue";
+import OthersBlock from "~/components/zodiacs/zodiacDeteiled/othersBlock.vue";
 
 const route = useRoute();
 const abc = route.params.param;

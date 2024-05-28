@@ -1,5 +1,5 @@
 <script setup>
-import HowDoHoroscope from "~/components/zodiacComponents/HowDoHoroscope.vue";
+import HowDoHoroscope from "~/components/zodiacs/zodiacComponents/HowDoHoroscope.vue";
 import { useFetch, useHead } from '#app'
 
 // const apiUrl = 'https://horoscope-be.nomadicdemo.com/api/meta/main'

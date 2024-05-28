@@ -1,10 +1,10 @@
 <script setup>
 import PageLinks from "@/components/globalComponents/PageLinks.vue";
-import TitleSection from "@/components/globalHoroscopesComponent/TitleSection.vue";
-import CheckDate from "@/components/globalHoroscopesComponent/CheckDate.vue";
-import CheckSign from "@/components/globalHoroscopesComponent/CheckSign.vue";
+import TitleSection from "~/components/other-horoscopes/globalHoroscopesComponent/TitleSection.vue";
+import CheckDate from "~/components/other-horoscopes/globalHoroscopesComponent/CheckDate.vue";
+import CheckSign from "~/components/other-horoscopes/globalHoroscopesComponent/CheckSign.vue";
 import { mayaSigns } from "@/assets/data/maya.js";
-import WhatIs from "@/components/globalHoroscopesComponent/WhatIs.vue";
+import WhatIs from "~/components/other-horoscopes/globalHoroscopesComponent/WhatIs.vue";
 import ZodiacListwTitle from "@/components/globalComponents/ZodiacListwTitle.vue";
 import EastSection from "@/components/mainComponents/EastSection.vue";
 import OtherOtherwTitle from "@/components/globalComponents/OtherOtherwTitle.vue";

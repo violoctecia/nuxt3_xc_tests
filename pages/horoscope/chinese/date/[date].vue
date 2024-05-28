@@ -1,15 +1,15 @@
 <script setup>
 import { ref } from "vue";
 import { useRoute } from "vue-router";
-import DescriptionDate from "@/components/chineseComponents/ChineseDescDate.vue";
-import HoroscopePageDescSign from "@/components/chineseComponents/ChineseDescSignElement.vue";
+import DescriptionDate from "~/components/other-horoscopes/chineseComponents/ChineseDescDate.vue";
+import HoroscopePageDescSign from "~/components/other-horoscopes/chineseComponents/ChineseDescSignElement.vue";
 import PageLinks from "@/components/globalComponents/PageLinks.vue";
 import ZodiacListwTitle from "@/components/globalComponents/ZodiacListwTitle.vue";
 import OtherEastwTitle from "@/components/globalComponents/OtherEastwTitle.vue";
 import OtherSection from "@/components/mainComponents/OtherSection.vue";
 import checkSignImage from "@/assets/images/Chinese_horoscope_2_.svg";
-import CheckSign from "@/components/globalHoroscopesComponent/CheckSign.vue";
-import CheckElement from "@/components/chineseComponents/ChineseCheckElement.vue";
+import CheckSign from "~/components/other-horoscopes/globalHoroscopesComponent/CheckSign.vue";
+import CheckElement from "~/components/other-horoscopes/chineseComponents/ChineseCheckElement.vue";
 import { chineseElements } from "@/assets/data/chinese.js";
 const elements = chineseElements;
 

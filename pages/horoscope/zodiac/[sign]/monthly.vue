@@ -1,6 +1,6 @@
 <script setup>
 import PageLinks from "@/components/globalComponents/PageLinks.vue";
-import HoroscopeDate from "@/components/zodiacSignDateComponents/HoroscopeDate.vue";
+import HoroscopeDate from "~/components/zodiacs/zodiacSignDateComponents/HoroscopeDate.vue";
 import EastSection from "@/components/mainComponents/EastSection.vue";
 import OtherSection from "@/components/mainComponents/OtherSection.vue";
 import { useRoute, useRouter } from "vue-router";

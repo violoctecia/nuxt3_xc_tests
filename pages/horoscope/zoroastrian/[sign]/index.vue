@@ -1,11 +1,11 @@
 <script setup>
 import PageLinks from "@/components/globalComponents/PageLinks.vue";
-import CheckDate from "@/components/globalHoroscopesComponent/CheckDate.vue";
+import CheckDate from "~/components/other-horoscopes/globalHoroscopesComponent/CheckDate.vue";
 import { useRoute } from "vue-router";
 import { readonly, ref, watch } from "vue";
 import { zoroastrianSigns } from "@/assets/data/zoroastrian.js";
-import CheckSign from "@/components/globalHoroscopesComponent/CheckSign.vue";
-import DefaultDescSign from "@/components/globalHoroscopesComponent/DefaultDescSign.vue";
+import CheckSign from "~/components/other-horoscopes/globalHoroscopesComponent/CheckSign.vue";
+import DefaultDescSign from "~/components/other-horoscopes/globalHoroscopesComponent/DefaultDescSign.vue";
 
 const signs = readonly(zoroastrianSigns);
 const route = useRoute();

@@ -1,11 +1,11 @@
 <script setup>
 import PageLinks from "@/components/globalComponents/PageLinks.vue";
-import CheckDate from "@/components/globalHoroscopesComponent/CheckDate.vue";
+import CheckDate from "~/components/other-horoscopes/globalHoroscopesComponent/CheckDate.vue";
 import { useRoute } from "vue-router";
 import { readonly, ref, watch } from "vue";
 import { druidSigns } from "@/assets/data/druids.js";
-import CheckSign from "@/components/globalHoroscopesComponent/CheckSign.vue";
-import DefaultDescSign from "@/components/globalHoroscopesComponent/DefaultDescSign.vue";
+import CheckSign from "~/components/other-horoscopes/globalHoroscopesComponent/CheckSign.vue";
+import DefaultDescSign from "~/components/other-horoscopes/globalHoroscopesComponent/DefaultDescSign.vue";
 
 const signs = readonly(druidSigns);
 const route = useRoute();

@@ -1,11 +1,11 @@
 <script setup>
 import PageLinks from "~/components/globalComponents/PageLinks.vue";
-import CheckDate from "~/components/globalHoroscopesComponent/CheckDate.vue";
+import CheckDate from "~/components/other-horoscopes/globalHoroscopesComponent/CheckDate.vue";
 import { useRoute } from "vue-router";
 import { readonly, ref, watch } from "vue";
 import { chineseElements } from "assets/data/chinese.js";
-import DefaultDescSign from "~/components/globalHoroscopesComponent/DefaultDescSign.vue";
-import CheckElement from "~/components/chineseComponents/ChineseCheckElement.vue";
+import DefaultDescSign from "~/components/other-horoscopes/globalHoroscopesComponent/DefaultDescSign.vue";
+import CheckElement from "~/components/other-horoscopes/chineseComponents/ChineseCheckElement.vue";
 
 const signs = readonly(chineseElements);
 const route = useRoute();
