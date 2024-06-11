@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <section class="natal-thanks">
+    <section class="natal-advantages">
         <div class="container">
             <div class="wrapper">
                 <div class="title">
@@ -40,6 +40,9 @@
 </template>
 
 <style scoped>
+.natal-advantages {
+    padding-bottom: 50px;
+}
 .wrapper {
     max-width: 960px;
     display: flex;

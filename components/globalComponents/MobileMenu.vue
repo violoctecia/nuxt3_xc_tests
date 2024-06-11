@@ -10,7 +10,7 @@ const handleLinkClick = () => {
             <nav class="mobile_nav">
                 <li>
                     <nuxt-link
-                        to="/horoscope/zodiac"
+                        to="/horoscope/zodiac/"
                         @click.native="handleLinkClick"
                     >
                         Зодиакальный гороскоп
@@ -21,7 +21,7 @@ const handleLinkClick = () => {
                 </li>
                 <li>
                     <nuxt-link
-                        to="/horoscope/chinese"
+                        to="/horoscope/chinese/"
                         @click.native="handleLinkClick"
                         >Китайский гороскоп<img
                             src="@/assets/images/arrowRight.svg"
@@ -30,7 +30,7 @@ const handleLinkClick = () => {
                 </li>
                 <li>
                     <nuxt-link
-                        to="/horoscope/japanese"
+                        to="/horoscope/japanese/"
                         @click.native="handleLinkClick"
                         >Японский гороскоп<img
                             src="@/assets/images/arrowRight.svg"
@@ -38,42 +38,41 @@ const handleLinkClick = () => {
                     /></nuxt-link>
                 </li>
                 <li>
-                    <nuxt-link to="/horoscope/zoroastrian"
+                    <nuxt-link to="/horoscope/zoroastrian/"
                         >Зороастрийский гороскоп<img
                             src="@/assets/images/arrowRight.svg"
                             alt="arrowRight"
                     /></nuxt-link>
                 </li>
                 <li>
-                    <nuxt-link to="/horoscope/floral"
+                    <nuxt-link to="/horoscope/floral/"
                         >Цветочный гороскоп<img
                             src="@/assets/images/arrowRight.svg"
                             alt="arrowRight"
                     /></nuxt-link>
                 </li>
                 <li>
-                    <nuxt-link to="/horoscope/maya"
-                        >Гороскоп Майя<img
-                            src="@/assets/images/arrowRight.svg"
-                            alt="arrowRight"
-                    /></nuxt-link>
-                </li>
-                <li>
-                    <nuxt-link to="/horoscope/druids"
+                    <nuxt-link to="/horoscope/druids/"
                         >Гороскоп Друидов<img
                             src="@/assets/images/arrowRight.svg"
                             alt="arrowRight"
                     /></nuxt-link>
                 </li>
                 <li>
+                    <nuxt-link to="/horoscope/maya/"
+                        >Гороскоп Майя<img
+                            src="@/assets/images/arrowRight.svg"
+                            alt="arrowRight"
+                    /></nuxt-link>
+                </li>
 
-                  <nuxt-link to="/mission"
-                  >О проекте
-                    <img
-                        src="@/assets/images/arrowRight.svg"
-                        alt="arrowRight"
-                    /></nuxt-link
-                  >
+                <li>
+                    <nuxt-link to="/doc/mission/"
+                        >О проекте
+                        <img
+                            src="@/assets/images/arrowRight.svg"
+                            alt="arrowRight"
+                    /></nuxt-link>
                 </li>
             </nav>
             <img

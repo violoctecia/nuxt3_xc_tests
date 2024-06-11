@@ -1,92 +1,54 @@
 <script setup>
-import { ref, watchEffect } from "vue";
-import { useRoute } from "vue-router";
 import PageLinks from "@/components/globalComponents/PageLinks.vue";
-import DateInfo from "~/components/other-horoscopes/globalHoroscopesComponent/DateInfo.vue";
-import DateDescSign from "~/components/other-horoscopes/globalHoroscopesComponent/DateDescSign.vue";
-import { mayaSigns } from "@/assets/data/maya.js";
-import CheckSign from "~/components/other-horoscopes/globalHoroscopesComponent/CheckSign.vue";
-import ZodiacListwTitle from "@/components/globalComponents/ZodiacListwTitle.vue";
-import EastSection from "@/components/mainComponents/EastSection.vue";
-import OtherOtherwTitle from "@/components/globalComponents/OtherOtherwTitle.vue";
-import checkSignImage from "assets/images/Maya_horoscope_2.svg";
+import SeoMeta from "~/components/meta/seo-meta.vue";
+import HoroscopeBlock from "~/components/horoscope/date/horoscope-block.vue";
+import OtherHoroscopesDate from "~/components/horoscope/date/other-horoscopes-date.vue";
+import TitleSection from "~/components/horoscope/date/title-section.vue";
+import {useRoute} from "vue-router";
+import {ref} from "vue";
+import {formatDate, getMayaSign, isValidDate} from "~/utils.js";
+import {mayaSigns} from "assets/data/maya.js";
 
+const router = useRouter();
 const route = useRoute();
 const rawDate = ref(route.params.date);
+const formattedDate = ref('');
+const sign = ref('');
 
-function findMayaSignByDate(date) {
-  if (!date) return "Дата не определена";
-
-  const [day, month, year] = date.split("-").map(Number);
-
-  const startDate = new Date(Date.UTC(1930, 0, 1));
-
-  const currentDate = new Date(Date.UTC(year, month - 1, day));
-
-  const differenceInDays = Math.floor(
-      (currentDate - startDate) / (1000 * 60 * 60 * 24)
-  );
-
-  const mayaSigns = [
-    "Орел (Мен)",
-    "Гриф (Киб)",
-    "Земля (Кабан)",
-    "Кремень (Эцнаб)",
-    "Буря (Кауак)",
-    "Солнце (Ахау)",
-    "Крокодил (Имиш)",
-    "Ветер (Ик)",
-    "Ночь (Акбаль)",
-    "Зерно (Кан)",
-    "Змей (Чик-Чан)",
-    "Череп (Кими)",
-    "Олень (Маник)",
-    "Звезда (Ламат)",
-    "Вода (Мулук)",
-    "Собака (Ок)",
-    "Обезьяна (Чуэн)",
-    "Лестница (Эб)",
-    "Тростник (Бен)",
-    "Ягуар (Иш)",
-  ];
-
-  let signIndex = differenceInDays % mayaSigns.length;
-  if (signIndex < 0) {
-    signIndex += mayaSigns.length;
-  }
-  return mayaSigns[signIndex];
-}
-const mayaSign = ref(findMayaSignByDate(rawDate.value));
-watchEffect(() => {
-  mayaSign.value = findMayaSignByDate(rawDate.value);
+const {data, error} = await useAsyncData('fetchData', async () => {
+    if (!isValidDate(rawDate.value)) {
+        router.push('/404');
+        return;
+    }
+    const formattedDateValue = formatDate(rawDate.value);
+    const [day, month, year] = rawDate.value.split('-').map(Number);
+    const signValue = getMayaSign(day, month, year);
+    return {rawDate: rawDate.value, formattedDate: formattedDateValue, sign: signValue};
 });
 
+if (data.value) {
+    rawDate.value = data.value.rawDate;
+    formattedDate.value = data.value.formattedDate;
+    sign.value = data.value;
+}
+
+const currentSign = ref(mayaSigns[sign.value.sign])
 </script>
 
 <template>
-  <PageLinks>
-    <template #links>
-      <nuxt-link to="/">Главная</nuxt-link>
-      <nuxt-link to="/horoscope/maya">Гороскоп Майя</nuxt-link>
-      <nuxt-link :to="`/horoscope/maya/date/${rawDate}`"
-      >Гороскоп по дате рождения: {{ rawDate }}</nuxt-link
-      >
-    </template>
-  </PageLinks>
-
-  <DateInfo
-      :title="'Гороскоп Майя'"
-      :sign="mayaSign"
-      :year="rawDate"
-  ></DateInfo>
-  <DateDescSign :sign="mayaSign" :signsData="mayaSigns"></DateDescSign>
-  <CheckSign
-      :image="checkSignImage"
-      :signsData="mayaSigns"
-      :title="'Другие знаки в гороскопе Майя'"
-      :horoscopeType="'maya'"
-  ></CheckSign>
-  <ZodiacListwTitle></ZodiacListwTitle>
-  <EastSection></EastSection>
-  <OtherOtherwTitle :maya="true"></OtherOtherwTitle>
+    <PageLinks>
+        <template #links>
+            <nuxt-link to="/">Главная</nuxt-link>
+            <nuxt-link to="/horoscope/">Гороскопы</nuxt-link>
+            <nuxt-link :to="`/horoscope/maya/date/${rawDate}/`"
+            >Ггороскоп Майя на {{ formattedDate }}
+            </nuxt-link
+            >
+        </template>
+    </PageLinks>
+    <title-section :title="'Гороскоп Майя для рожденных'" :date="formattedDate"></title-section>
+    <horoscope-block :sign="currentSign" :horoscope-type="'гороскопу майя'"></horoscope-block>
+    <other-horoscopes-date :date="formattedDate" :url-date="rawDate"
+                           :current-horoscope="'maya'"></other-horoscopes-date>
+    <seo-meta></seo-meta>
 </template>

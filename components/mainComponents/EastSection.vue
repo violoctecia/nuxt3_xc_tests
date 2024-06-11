@@ -3,7 +3,7 @@
         <div class="container">
             <h2 class="title">Восточные гороскопы</h2>
             <div class="cards_wrapper">
-                <nuxt-link to="/horoscope/chinese" class="card">
+                <nuxt-link to="/horoscope/chinese/" class="card">
                     <div class="text">
                         <h3>Китайский гороскоп</h3>
                         <p>
@@ -13,7 +13,7 @@
                         </p>
                     </div>
                     <span
-                    >Читать
+                        >Читать
                         <svg
                             width="24"
                             height="24"
@@ -29,13 +29,13 @@
                             </g>
                             <defs>
                                 <clipPath id="clip0_2005_293">
-                                    <rect width="24" height="24" fill="white"/>
+                                    <rect width="24" height="24" fill="white" />
                                 </clipPath>
                             </defs>
                         </svg>
                     </span>
                 </nuxt-link>
-                <nuxt-link to="/horoscope/japanese" class="card">
+                <nuxt-link to="/horoscope/japanese/" class="card">
                     <div class="text">
                         <h3>Японский гороскоп</h3>
                         <p>
@@ -44,7 +44,8 @@
                             знаков животных, соответствующих году рождения.
                         </p>
                     </div>
-                    <span>Читать
+                    <span
+                        >Читать
                         <svg
                             width="24"
                             height="24"
@@ -60,14 +61,13 @@
                             </g>
                             <defs>
                                 <clipPath id="clip0_2005_293">
-                                    <rect width="24" height="24" fill="white"/>
+                                    <rect width="24" height="24" fill="white" />
                                 </clipPath>
                             </defs>
                         </svg>
                     </span>
                 </nuxt-link>
-                <nuxt-link to="/horoscope/zoroastrian"
-                           class="card">
+                <nuxt-link to="/horoscope/zoroastrian/" class="card">
                     <div class="text">
                         <h3>Зороастрийский гороскоп</h3>
                         <p>
@@ -76,7 +76,8 @@
                             духовную эволюцию человека и принципы морали.
                         </p>
                     </div>
-                    <span>Читать
+                    <span
+                        >Читать
                         <svg
                             width="24"
                             height="24"
@@ -92,7 +93,7 @@
                             </g>
                             <defs>
                                 <clipPath id="clip0_2005_293">
-                                    <rect width="24" height="24" fill="white"/>
+                                    <rect width="24" height="24" fill="white" />
                                 </clipPath>
                             </defs>
                         </svg>
@@ -127,7 +128,6 @@
     max-width: 520px;
     background-size: cover;
 }
-
 .text {
     display: flex;
     flex-direction: column;
@@ -278,5 +278,4 @@ span {
     }
 }
 </style>
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>

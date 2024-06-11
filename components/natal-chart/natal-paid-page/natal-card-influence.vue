@@ -1,7 +1,3 @@
-<script setup>
-
-</script>
-
 <template>
     <section class="natal-card-influence">
         <div class="container">
@@ -14,27 +10,32 @@
                     <div class="block">
                         <img src="@/assets/images/block-icon.svg" alt="block-icon">
                         <p class="title">Жизненная стратегия</p>
-                        <p class="subtitle">С помощью астрологии можно понять ваше предназначение, цели и задачи на эту жизнь.</p>
+                        <p class="subtitle">С помощью астрологии можно понять ваше предназначение, цели и задачи на эту
+                            жизнь.</p>
                     </div>
                     <div class="block">
                         <img src="@/assets/images/block-icon.svg" alt="block-icon">
                         <p class="title">Личностный рост и развитие</p>
-                        <p class="subtitle">Натальная карта раскрывает новые аспекты вашего внутреннего мира и помогает развивать вас как личность.</p>
+                        <p class="subtitle">Натальная карта раскрывает новые аспекты вашего внутреннего мира и помогает
+                            развивать вас как личность.</p>
                     </div>
                     <div class="block">
                         <img src="@/assets/images/block-icon.svg" alt="block-icon">
                         <p class="title">Понимание себя и своих эмоций</p>
-                        <p class="subtitle">Разбор натальной карты позволяет осознать ваши эмоциональные реакции на события и научиться реагировать на них более спокойно.</p>
+                        <p class="subtitle">Разбор натальной карты позволяет осознать ваши эмоциональные реакции на
+                            события и научиться реагировать на них более спокойно.</p>
                     </div>
                     <div class="block">
                         <img src="@/assets/images/block-icon.svg" alt="block-icon">
                         <p class="title">Отношения</p>
-                        <p class="subtitle">Натальная карта раскрывает динамику ваших отношений с другими людьми, помогает наладить коммуникацию.</p>
+                        <p class="subtitle">Натальная карта раскрывает динамику ваших отношений с другими людьми,
+                            помогает наладить коммуникацию.</p>
                     </div>
                     <div class="block">
                         <img src="@/assets/images/block-icon.svg" alt="block-icon">
                         <p class="title">Самоидентификация</p>
-                        <p class="subtitle">Персональный астрологический анализ вашей личности помогает почувствовать вашу уникальность и ценность.</p>
+                        <p class="subtitle">Персональный астрологический анализ вашей личности помогает почувствовать
+                            вашу уникальность и ценность.</p>
                     </div>
                 </div>
 
@@ -45,15 +46,18 @@
 
 <style scoped>
 .wrapper {
-    background: var(--dark-select);
+    background-image: url("@/assets/images/natals/natal-card-influence.svg");
+    background-size: cover;
     border-radius: 24px;
     padding: 48px;
     display: flex;
     flex-direction: column;
 }
+
 .title {
     max-width: 620px;
     margin-bottom: 100px;
+
     h3 {
         text-align: start;
         font-weight: 400;
@@ -62,19 +66,23 @@
         color: var(--dark-select-10);
     }
 }
+
 .blocks {
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 16px;
+
     .block:first-child {
         background: none;
     }
+
     .block:nth-child(2) {
         height: 100%;
         align-self: flex-end;
     }
+
     .block {
         display: flex;
         flex-direction: column;
@@ -82,11 +90,13 @@
         padding: 48px 24px;
         width: 309px;
         border-radius: 24px;
+
         img {
             margin-bottom: 24px;
             width: 64px;
             height: 64px;
         }
+
         .title {
             text-align: start;
             font-weight: 500;
@@ -95,6 +105,7 @@
             color: var(--dark-select-10);
             margin-bottom: 8px;
         }
+
         .subtitle {
             text-align: start;
             font-weight: 400;
@@ -104,21 +115,26 @@
         }
     }
 }
+
 @media (max-width: 1100px) {
     .wrapper {
         border-radius: 16px;
         padding: 24px 24px 4px 24px;
         overflow: hidden;
+        background: #1b1d1f;
     }
+
     .title {
         max-width: 620px;
         margin-bottom: 32px;
+
         h3 {
             font-weight: 400;
             font-size: 26px;
             line-height: 115%;
         }
     }
+
     .blocks {
         width: 100%;
         display: flex;
@@ -127,14 +143,17 @@
         overflow-x: scroll;
         gap: 16px;
         padding-bottom: 20px;
+
         .block:first-child {
             display: none;
         }
+
         .block:nth-child(2) {
             align-self: normal;
             min-height: auto;
-            height: 308px;
+            height: auto;
         }
+
         .block {
             min-height: auto;
             display: flex;
@@ -144,16 +163,19 @@
             min-width: 294px;
             width: 294px;
             border-radius: 24px;
+            height: auto;
             img {
                 width: 40px;
                 height: 40px;
             }
+
             .title {
                 font-weight: 500;
                 font-size: 15px;
                 line-height: 160%;
                 margin-bottom: 4px;
             }
+
             .subtitle {
                 font-weight: 400;
                 font-size: 15px;
@@ -162,18 +184,22 @@
         }
     }
 }
+
 @media (max-width: 800px) {
-   .container {
-       padding: 0;
-   }
+    .container {
+        padding: 0;
+    }
+
     .wrapper {
         padding-right: 0;
         padding-left: 0;
     }
+
     .title h3 {
         padding-left: 24px;
         padding-right: 24px;
     }
+
     .blocks {
         padding-left: 24px;
         padding-right: 24px;

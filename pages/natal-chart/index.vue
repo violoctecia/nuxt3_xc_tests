@@ -2,46 +2,29 @@
 import PageLinks from "~/components/globalComponents/PageLinks.vue";
 import MainBlockLinks from "~/components/natal-chart/main-block-links.vue";
 import TelegramLink from "~/components/mainComponents/TelegramLink.vue";
-</script>
-
-<script>
-export default {
-    mounted() {
-        this.$refs.page.classList.add("fade-enter-active");
-        setTimeout(() => {
-            this.$refs.page.classList.remove("fade-enter-active");
-        }, 150);
-    },
-    beforeRouteLeave(to, from, next) {
-        this.$refs.page.classList.add("fade-leave-active");
-        setTimeout(() => {
-            next();
-        }, 150);
-    },
-};
+import SeoMeta from "~/components/meta/seo-meta.vue";
 </script>
 
 
 <template>
-    <div ref="page" class="page">
-        <PageLinks>
-            <template #links>
-                <nuxt-link to="/">Главная</nuxt-link>
-                <nuxt-link to="/natal-chart">Натальные карты</nuxt-link>
-            </template>
-        </PageLinks>
+    <seo-meta></seo-meta>
+    <PageLinks>
+        <template #links>
+            <nuxt-link to="/">Главная</nuxt-link>
+            <nuxt-link to="/natal-chart/">Натальные карты</nuxt-link>
+        </template>
+    </PageLinks>
 
-        <div class="container">
-            <div class="natal-main-title">
-                <h1>Натальные карты</h1>
-                <h2>Натальная карта используется для анализа личности, характера и судьбы человека и позволяет
-                    разобраться в разных сферах жизни</h2>
-            </div>
+    <div class="container">
+        <div class="natal-main-title">
+            <h1>Натальные карты</h1>
+            <h2>Натальная карта используется для анализа личности, характера и судьбы человека и позволяет
+                разобраться в разных сферах жизни</h2>
         </div>
-        <main-block-links></main-block-links>
-        <div class="mb96">
-            <telegram-link></telegram-link>
-        </div>
+    </div>
+    <main-block-links></main-block-links>
+    <div class="mb96">
+        <telegram-link></telegram-link>
     </div>
 </template>
 

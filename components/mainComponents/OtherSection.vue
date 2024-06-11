@@ -4,8 +4,7 @@
             <h2 class="title">Другие гороскопы</h2>
 
             <div class="cards_wrapper">
-                <nuxt-link to="/horoscope/floral"
-                           class="card">
+                <nuxt-link to="/horoscope/floral/" class="card">
                     <div class="text">
                         <h3>Цветочный гороскоп</h3>
                         <p>
@@ -13,7 +12,8 @@
                             цветами и личностными характеристиками.
                         </p>
                     </div>
-                    <span>Читать
+                    <span
+                        >Читать
                         <svg
                             width="24"
                             height="24"
@@ -29,14 +29,13 @@
                             </g>
                             <defs>
                                 <clipPath id="clip0_2005_293">
-                                    <rect width="24" height="24" fill="white"/>
+                                    <rect width="24" height="24" fill="white" />
                                 </clipPath>
                             </defs>
                         </svg>
                     </span>
                 </nuxt-link>
-                <nuxt-link to="/horoscope/druids"
-                           class="card">
+                <nuxt-link to="/horoscope/druids/" class="card">
                     <div class="text">
                         <h3>Гороскоп друидов</h3>
                         <p>
@@ -44,7 +43,8 @@
                             наблюдениях за природой и циклическом ходе времени.
                         </p>
                     </div>
-                    <span>Читать
+                    <span
+                        >Читать
                         <svg
                             width="24"
                             height="24"
@@ -60,14 +60,13 @@
                             </g>
                             <defs>
                                 <clipPath id="clip0_2005_293">
-                                    <rect width="24" height="24" fill="white"/>
+                                    <rect width="24" height="24" fill="white" />
                                 </clipPath>
                             </defs>
                         </svg>
                     </span>
                 </nuxt-link>
-                <nuxt-link to="/horoscope/maya"
-                           class="card">
+                <nuxt-link to="/horoscope/maya/" class="card">
                     <div class="text">
                         <h3>Гороскоп Майя</h3>
                         <p>
@@ -76,7 +75,8 @@
                             планетами.
                         </p>
                     </div>
-                    <span>Читать
+                    <span
+                        >Читать
                         <svg
                             width="24"
                             height="24"
@@ -92,7 +92,7 @@
                             </g>
                             <defs>
                                 <clipPath id="clip0_2005_293">
-                                    <rect width="24" height="24" fill="white"/>
+                                    <rect width="24" height="24" fill="white" />
                                 </clipPath>
                             </defs>
                         </svg>
@@ -235,5 +235,4 @@ span {
     }
 }
 </style>
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>

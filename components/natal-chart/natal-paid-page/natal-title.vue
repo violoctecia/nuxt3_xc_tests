@@ -49,9 +49,6 @@ const props = defineProps({
         }
     }
     @media (max-width: 1100px) {
-        .natal {
-            width: 309px;
-        }
         .wrapper {
             gap: 24px;
             max-width: 600px;
@@ -72,9 +69,6 @@ const props = defineProps({
         }
     }
     @media (max-width: 800px) {
-        .natal {
-            width: 100%;
-        }
         .wrapper {
             align-items: flex-start;
             gap: 24px;
@@ -94,6 +88,7 @@ const props = defineProps({
                 font-size: 13px;
                 line-height: 169%;
                 text-align: start;
+                max-width: 80%;
             }
         }
     }

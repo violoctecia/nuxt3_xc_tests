@@ -1,7 +1,12 @@
 <script setup>
-import {useFetch} from "#app";
-const apiUrl = 'https://horoscope-be.nomadicdemo.com/api/lunar-horoscope'
-const { data } = await useFetch(apiUrl)
+import { useFetch } from "#app";
+import {API_KEY} from "~/config.js";
+const apiUrl = `${API_KEY}/lunar-horoscope`;
+const { data, error } = await useFetch(apiUrl);
+
+if (error.value) {
+    console.error('Error fetching data:', error.value);
+}
 </script>
 
 <template>
@@ -17,6 +22,7 @@ const { data } = await useFetch(apiUrl)
                     </h2>
                 </div>
                 <img src="@/assets/images/main_illustration.svg" alt="Main illustration" />
+                <img class="mobile-img" src="@/assets/images/main_illustr_mobile.svg" alt="Main illustration" />
             </div>
             <div class="main_card">
                 <h1>Лунный гороскоп на сегодня</h1>
@@ -31,6 +37,9 @@ const { data } = await useFetch(apiUrl)
 </template>
 
 <style scoped>
+.mobile-img {
+    display: none;
+}
 .main_card {
     display: flex;
     flex-direction: column;
@@ -69,6 +78,7 @@ const { data } = await useFetch(apiUrl)
 }
 .main_text {
     position: relative;
+    margin-bottom: 65px;
 
     img {
         position: absolute;
@@ -146,8 +156,28 @@ h2 {
 @media (max-width: 800px) {
     .main_text {
         img {
-            bottom: -20px;
+            bottom: -85px;
+
+        }
+
+    }
+
+}
+@media (max-width: 500px) {
+    .main_text {
+        img {
+            display: none;
+
+        }
+        .mobile-img {
+            display: block;
+            position: absolute;
+            z-index: -1;
+            max-width: 100%;
+            width: 100%;
+            bottom: -65px;
         }
     }
+
 }
 </style>

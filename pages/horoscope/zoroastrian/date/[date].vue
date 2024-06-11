@@ -1,79 +1,52 @@
 <script setup>
-import { ref, watchEffect } from "vue";
-import { useRoute } from "vue-router";
 import PageLinks from "@/components/globalComponents/PageLinks.vue";
 import { zoroastrianSigns } from "@/assets/data/zoroastrian.js";
-import DateInfo from "~/components/other-horoscopes/globalHoroscopesComponent/DateInfo.vue";
-import { shallowRef } from "vue";
-import DateDescSign from "~/components/other-horoscopes/globalHoroscopesComponent/DateDescSign.vue";
-import CheckSign from "~/components/other-horoscopes/globalHoroscopesComponent/CheckSign.vue";
-import ZodiacListwTitle from "@/components/globalComponents/ZodiacListwTitle.vue";
-import OtherEastwTitle from "@/components/globalComponents/OtherEastwTitle.vue";
-import OtherSection from "@/components/mainComponents/OtherSection.vue";
+import SeoMeta from "~/components/meta/seo-meta.vue";
+import {useRoute} from "vue-router";
+import {ref} from "vue";
+import {formatDate, getZoroastrianSign, isValidDate} from "~/utils.js";
+import HoroscopeBlock from "~/components/horoscope/date/horoscope-block.vue";
+import OtherHoroscopesDate from "~/components/horoscope/date/other-horoscopes-date.vue";
+import TitleSection from "~/components/horoscope/date/title-section.vue";
 
-const signs = shallowRef(zoroastrianSigns);
+const router = useRouter();
 const route = useRoute();
 const rawDate = ref(route.params.date);
+const formattedDate = ref('');
+const sign = ref('');
 
-// Функция для извлечения года из даты
-const extractYearFromDate = (dateString) => {
-    const [, , year] = dateString.split("-").map(Number);
-    return year;
-};
-
-// Функция для нахождения знака по дате рождения
-const findSignByDate = (date) => {
-    const year = extractYearFromDate(date);
-    let signIndex = (year - 1951) % zoroastrianSigns.length; // Начинаем считать с 1951 года, когда бык
-    if (signIndex < 0) signIndex += zoroastrianSigns.length; // Если получили отрицательный результат, добавляем длину массива
-    return signs.value[signIndex].ru; // Возвращает русское название знака
-};
-
-// Инициализация переменной с данными о дате
-const date = ref({ year: null, sign: null });
-
-const filteredSigns = ref(
-    signs.value.filter((sign) => sign.ru !== date.value.sign)
-);
-// Нахождение знака по полученной дате
-date.value = {
-    year: extractYearFromDate(rawDate.value),
-    sign: findSignByDate(rawDate.value),
-};
-
-// Обновление значения date.[[sign]] при изменении даты
-watchEffect(() => {
-    date.value.sign = findSignByDate(rawDate.value);
-    filteredSigns.value = signs.value.filter(
-        (sign) => sign.ru !== date.value.sign
-    );
+const { data, error } = await useAsyncData('fetchData', async () => {
+    if (!isValidDate(rawDate.value)) {
+        router.push('/404');
+        return;
+    }
+    const formattedDateValue = formatDate(rawDate.value);
+    const [day, month, year] = rawDate.value.split('-').map(Number);
+    const signValue = getZoroastrianSign(day, month, year);
+    return { rawDate: rawDate.value, formattedDate: formattedDateValue, sign: signValue };
 });
+
+if (data.value) {
+    rawDate.value = data.value.rawDate;
+    formattedDate.value = data.value.formattedDate;
+    sign.value = data.value;
+}
+
+const currentSign = ref(zoroastrianSigns[sign.value.sign])
 </script>
 
 <template>
     <PageLinks>
         <template #links>
             <nuxt-link to="/">Главная</nuxt-link>
-            <nuxt-link to="/horoscope/zoroastrian"
-                >Зороастрийский гороскоп</nuxt-link
-            >
-            <nuxt-link :to="`/horoscope/zoroastrian/date/${rawDate}`"
-                >Гороскоп по дате рождения: {{ rawDate }}</nuxt-link
+            <nuxt-link to="/horoscope/">Гороскопы</nuxt-link>
+            <nuxt-link :to="`/horoscope/zoroastrian/date/${rawDate}/`"
+            >Зороастрийский гороскоп на {{ formattedDate }}</nuxt-link
             >
         </template>
     </PageLinks>
-    <DateInfo
-        :title="'Зароастрийский гороскоп'"
-        :sign="date.sign"
-        :year="rawDate"
-    ></DateInfo>
-    <DateDescSign :sign="date.sign" :signsData="signs"></DateDescSign>
-    <CheckSign
-        :signsData="filteredSigns"
-        :title="'Другие знаки в Зороастрийском гороскопе'"
-        :horoscopeType="'zoroastrian'"
-    ></CheckSign>
-    <ZodiacListwTitle></ZodiacListwTitle>
-    <OtherEastwTitle :zaroastrian="true"></OtherEastwTitle>
-    <OtherSection></OtherSection>
+    <title-section :title="'Зороастрийский гороскоп для рожденных'" :date="formattedDate"></title-section>
+    <horoscope-block :sign="currentSign" :horoscope-type="'зороастрийский гороскопу'"></horoscope-block>
+    <other-horoscopes-date :date="formattedDate" :url-date="rawDate" :current-horoscope="'zoroastrian'"></other-horoscopes-date>
+    <seo-meta></seo-meta>
 </template>

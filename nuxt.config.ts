@@ -9,4 +9,5 @@ export default defineNuxtConfig({
       meta: [{ name: "robots", content: "noindex, nofollow" }],
     },
   },
+  modules: ["nuxt-swiper"],
 });

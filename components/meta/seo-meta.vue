@@ -1,14 +1,14 @@
 <script setup>
-const props = defineProps({
-    url: String,
-});
 import {useFetch} from '#app'
-const apiBaseUrl = 'https://horoscope-be.nomadicdemo.com/api/meta/';
-const apiUrl = `${apiBaseUrl}${props.url}`;
-const { data } = await useFetch(apiUrl);
+import {API_KEY} from "~/config.js";
+import { useRoute } from 'vue-router';
 
-console.log(`Запрос по: ${apiUrl}`);
-console.log(data.value?.seo_array);
+const route = useRoute();
+const url = route.path;
+
+const apiUrl = `${API_KEY}/meta?slug=${url}`;
+console.log(apiUrl)
+const { data } = await useFetch(apiUrl);
 </script>
 
 <template>
@@ -36,7 +36,3 @@ console.log(data.value?.seo_array);
         <Meta property="og:image:alt" v-if="data.seo_array.og_image_alt" :content="data.seo_array.og_image_alt"/>
     </Head>
 </template>
-
-<style scoped>
-
-</style>

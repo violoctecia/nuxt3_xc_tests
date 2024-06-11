@@ -12,8 +12,11 @@ const props = defineProps({
             <h2 class="title">Восточные гороскопы</h2>
 
             <div class="cards_wrapper">
-                <nuxt-link to="/horoscope/chinese"
-                           class="card chinese" v-if="!props.chinese">
+                <nuxt-link
+                    to="/horoscope/chinese/"
+                    class="card chinese"
+                    v-if="!props.chinese"
+                >
                     <div class="text">
                         <h3>Китайский гороскоп</h3>
                         <p>
@@ -22,7 +25,8 @@ const props = defineProps({
                             соответствует году рождения.
                         </p>
                     </div>
-                    <span>Читать
+                    <span
+                        >Читать
                         <svg
                             width="24"
                             height="24"
@@ -44,8 +48,11 @@ const props = defineProps({
                         </svg>
                     </span>
                 </nuxt-link>
-                <nuxt-link to="/horoscope/japanese"
-                           class="card japanese" v-if="!props.japanese">
+                <nuxt-link
+                    to="/horoscope/japanese/"
+                    class="card japanese"
+                    v-if="!props.japanese"
+                >
                     <div class="text">
                         <h3>Японский гороскоп</h3>
                         <p>
@@ -54,7 +61,8 @@ const props = defineProps({
                             знаков животных, соответствующих году рождения.
                         </p>
                     </div>
-                    <span>Читать
+                    <span
+                        >Читать
                         <svg
                             width="24"
                             height="24"
@@ -76,8 +84,11 @@ const props = defineProps({
                         </svg>
                     </span>
                 </nuxt-link>
-                <nuxt-link to="/horoscope/zoroastrian"
-                           class="card zaroastrian" v-if="!props.zaroastrian">
+                <nuxt-link
+                    to="/horoscope/zoroastrian/"
+                    class="card zaroastrian"
+                    v-if="!props.zaroastrian"
+                >
                     <div class="text">
                         <h3>Зороастрийский гороскоп</h3>
                         <p>
@@ -86,7 +97,8 @@ const props = defineProps({
                             духовную эволюцию человека и принципы морали.
                         </p>
                     </div>
-                    <span>Читать
+                    <span
+                        >Читать
                         <svg
                             width="24"
                             height="24"
