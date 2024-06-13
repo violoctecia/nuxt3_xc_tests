@@ -113,7 +113,7 @@ const handleYellowButtonClick = () => {
                         </svg>
                     </div>
                 </nuxt-link>
-                <nuxt-link to="/" class="block">
+                <nuxt-link to="/natal-chart/energy/" class="block">
                     <div class="info">
                         <h3>Энергия и вдохновение</h3>
                         <h4>Как правильно расслабляться и отдыхать так, чтобы наполняться ресурсами, откуда черпать энергию и в чем источник сил и вдохновения — обо всем расскажут аспекты Ваших Луны и Марса.
@@ -135,7 +135,7 @@ const handleYellowButtonClick = () => {
                         </svg>
                     </div>
                 </nuxt-link>
-                <nuxt-link to="/" class="block">
+                <nuxt-link to="/natal-chart/style/" class="block">
                     <div class="info">
                         <h3>Стиль по натальной карте</h3>
                         <h4>Как одеваться так, чтобы привлекать взгляды окружающих, нравиться людям и производить самое приятное первое впечатление? Давайте узнаем у Асцендента и Венеры в Вашей натальной карте.

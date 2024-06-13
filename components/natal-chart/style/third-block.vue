@@ -3,30 +3,26 @@
 </script>
 
 <template>
-<section class="how-its-works">
-    <div class="container">
-        <div class="wrapper">
-            <div class="text">
-                <h3>Как это работает?</h3>
-                <p>Зная особенности этих домов в вашей натальной карте и умея грамотно ими распоряжаться, можно получить доступ к огромным денежным потокам</p>
-            </div>
-            <div class="list">
-               <div class="block">
-                   <p>Второй дом</p>
-                   <span>Это дом наших финансов, все то, чем обладаем мы сами: наши личные ресурсы, доходы, имущество</span>
-               </div>
-                <div class="block">
-                    <p>Восьмой дом</p>
-                    <span>Это дом чужих денег, он описывает денежные средства, имущество, материальные ценности наших партнёров</span>
+    <section class="how-its-works">
+        <div class="container">
+            <div class="wrapper">
+                <div class="text">
+                    <h3>Гайд по стилю подойдет вам, если вы:</h3>
                 </div>
-                <div class="block">
-                    <p>Что показывают?</p>
-                    <span>Как и с помощью чего мы притягиваем материальные ресурсы в свою жизнь</span>
+                <div class="list">
+                    <div class="block">
+                        <p>Потеряли свой стиль</p>
+                        <span>Чувствуете, что ваш нынешний стиль в одежде не отображает вас как личность, но не знаете, в какую сторону его менять</span>
+                    </div>
+                    <div class="block">
+                        <p>Хотите быть ярким</p>
+                        <span>Любите красиво одеваться, и вам хочется собирать еще больше комплиментов по поводу того, как Вы выглядите</span>
+                    </div>
+
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 </template>
 
 <style scoped>
@@ -48,7 +44,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    max-width: 500px;
+    max-width: 750px;
     h3 {
         font-weight: 400;
         font-size: 48px;
@@ -64,12 +60,12 @@
 }
 .list {
     display: flex;
-    gap: 32px;
+    gap: 24px;
     .block {
         display: flex;
         flex-direction: column;
         gap: 16px;
-        width: 266px;
+        width: 50%;
         p {
             font-weight: 500;
             font-size: 19px;
